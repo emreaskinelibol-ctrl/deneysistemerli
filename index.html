@@ -264,17 +264,12 @@
         });
 
         // Form Gönderim Simülasyonu
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            btn.innerText = "GÖNDERİLDİ!";
-            btn.classList.replace('bg-blue-600', 'bg-green-600');
-            setTimeout(() => {
-                btn.innerText = "MESAJ GÖNDER";
-                btn.classList.replace('bg-green-600', 'bg-blue-600');
-                e.target.reset();
-            }, 3000);
-        });
+        <form action="https://formspree.io/f/xqeokpad" method="POST" class="space-y-4">
+    <input type="text" name="name" placeholder="Ad Soyad" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 transition" required>
+    <input type="email" name="email" placeholder="E-Posta" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 transition" required>
+    <textarea name="message" rows="4" placeholder="Mesajınız" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 transition" required></textarea>
+    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition">MESAJ GÖNDER</button>
+</form>
 
         // Tıklanan link sonrası mobil menüyü kapat
         document.querySelectorAll('#mobile-nav a').forEach(link => {
